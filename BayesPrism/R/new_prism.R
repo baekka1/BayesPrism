@@ -90,11 +90,11 @@ filter.bulk.outlier <- function(mixture,
 							  	outlier.cut,
 							  	outlier.fraction){
 	
-	mixture.norm <- mixture / rowSums(mixture)
+	#mixture.norm <- mixture / rowSums(mixture)
 		
-	outlier.idx <- colSums(mixture.norm > outlier.cut) / nrow(mixture.norm) > outlier.fraction
-	mixture <- mixture[, !outlier.idx, drop=F]
-	cat("Number of outlier genes filtered from mixture =", sum(outlier.idx),"\n")
+	#outlier.idx <- colSums(mixture.norm > outlier.cut) / nrow(mixture.norm) > outlier.fraction
+	#mixture <- mixture[, !outlier.idx, drop=F]
+	#cat("Number of outlier genes filtered from mixture =", sum(outlier.idx),"\n")
 	
 	return(mixture)
 }
