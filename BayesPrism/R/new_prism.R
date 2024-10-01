@@ -56,6 +56,7 @@ collapse <- function(ref, labels){
 #' function to validate if input contains negative, non-numeric, NA (stop), or is normalized (warning) or log-transformed (warning)
 #' @param input count.matrix, GEP or mixture
 validate.input <- function(input){
+	print(min(input))
 	#check if referece is non-log transformed
 	if(max(input)<=1){
 		warning("Warning: input seems to be normalized.") 
@@ -66,7 +67,6 @@ validate.input <- function(input){
 	}
 	
 	if(min(input)<0)
-		print(min(input))
 		stop(" Error: input contains negative values. 
 			   Please make sure your input is untransformed raw count. \n")
 	
