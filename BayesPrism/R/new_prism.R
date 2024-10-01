@@ -66,9 +66,9 @@ validate.input <- function(input){
 			warning("Warning: input seems to be log-transformed. Please double check your input. Log transformation should be avoided")
 	}
 	
-	if(min(input)<0)
-		stop(" Error: input contains negative values. 
-			   Please make sure your input is untransformed raw count. \n")
+	#if(min(input)<0)
+		#stop(" Error: input contains negative values. 
+			   #Please make sure your input is untransformed raw count. \n")
 	
 	if (any(!is.finite(input)) | any(is.na(input)) )
 		stop(" Error: input contains NaN or NA values.\n")
