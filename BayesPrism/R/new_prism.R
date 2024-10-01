@@ -66,6 +66,7 @@ validate.input <- function(input){
 	}
 	
 	if(min(input)<0)
+		print(min(input))
 		stop(" Error: input contains negative values. 
 			   Please make sure your input is untransformed raw count. \n")
 	
