@@ -152,6 +152,8 @@ new.prism <- function(reference,
 		cat("No tumor reference is speficied. Reference cell types are treated equally. \n")
 	
 	#check arguments
+	print(length(cell.type.labels))
+	print(nrow(reference))
 	if(length(cell.type.labels) != length(cell.state.labels))
 		stop("Error: length of cell.type.labels and cell.state.labels do not match!")
 	if(length(cell.type.labels) != nrow(reference))
