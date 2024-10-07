@@ -152,12 +152,13 @@ new.prism <- function(reference,
 		cat("No tumor reference is speficied. Reference cell types are treated equally. \n")
 	
 	#check arguments
-	print(length(cell.type.labels))
-	print(nrow(reference))
+	
 	if(length(cell.type.labels) != length(cell.state.labels))
 		stop("Error: length of cell.type.labels and cell.state.labels do not match!")
 	if(length(cell.type.labels) != nrow(reference))
-		stop("Error: length of cell.type.labels and nrow(reference) do not match!")	
+		stop("Error: length of cell.type.labels and nrow(reference) do not match!")
+		print(length(cell.type.labels))
+		print(nrow(reference))
 	#creat mapping between cell type and phenotype (cell type is a superset of phenotype)
 	type.to.state.mat <- unique(cbind(cell.type.labels, cell.state.labels))
 	if (max(table(type.to.state.mat[,"cell.state.labels"]))>1) 
